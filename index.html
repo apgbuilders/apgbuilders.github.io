@@ -38,7 +38,14 @@
 
 <body>
   <div class="body-inner">
-
+    <!-- Popup Modal -->
+    <!-- Popup Modal -->
+    <div id="landingPopup" class="popup-modal">
+      <div class="popup-content">
+        <span class="popup-close">&times;</span>
+        <img id="popupImage" src="images/popup.jpeg" alt="APG Builders" class="popup-image">
+      </div>
+    </div>
     <div id="top-bar" class="top-bar">
       <div class="container">
         <div class="row">
@@ -1110,7 +1117,32 @@
 
     <!-- Template custom -->
     <script src="js/script.js"></script>
+    <!-- Popup Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Show popup after a short delay (1 second)
+        setTimeout(function () {
+          document.getElementById("landingPopup").style.display = "flex";
+        }, 1000);
 
+        // Close popup when X is clicked
+        document.querySelector(".popup-close").addEventListener("click", function () {
+          document.getElementById("landingPopup").style.display = "none";
+        });
+
+        // Close popup when clicking outside the content
+        document.getElementById("landingPopup").addEventListener("click", function (e) {
+          if (e.target === this) {
+            document.getElementById("landingPopup").style.display = "none";
+          }
+        });
+
+        // Function to change popup image
+        window.changePopupImage = function (imagePath) {
+          document.getElementById("popupImage").src = imagePath;
+        };
+      });
+    </script>
   </div><!-- Body inner end -->
 </body>
 
