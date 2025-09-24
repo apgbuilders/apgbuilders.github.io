@@ -3569,4 +3569,16 @@ label {
   transform: scale(1.1);
 }
 
+/* Copyright section link color fix */
+.copyright a {
+  color: #111 !important;
+  /* Black text by default */
+  transition: color 0.2s;
+}
+
+.copyright a:hover {
+  color: #fff !important;
+  /* White text on hover */
+}
+
 /*# sourceMappingURL=style.css.map */
